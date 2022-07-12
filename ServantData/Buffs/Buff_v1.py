@@ -6,6 +6,8 @@ temp_list = ['gainStar']
 test = {'funcId': 152, 'funcType': 'addStateShort', 'funcTargetType': 'ptAll', 'funcTargetTeam': 'playerAndEnemy', 'funcPopupText': '공격력 UP', 'funcPopupIcon': 'https://static.atlasacademy.io/KR/BuffIcons/bufficon_300.png', 'functvals': [], 'funcquestTvals': [], 'funcGroup': [], 'buffs': [{'id': 126, 'name': '공격력 UP', 'detail': '공격력 UP', 'icon': 'https://static.atlasacademy.io/KR/BuffIcons/bufficon_300.png', 'type': 'upAtk', 'buffGroup': 0, 'script': {}, 'vals': [{'id': 3004, 'name': 'buffPositiveEffect'}, {'id': 3006, 'name': 'buffIncreaseDamage'}, {'id': 3027, 'name': 'buffAtkUp'}], 'tvals': [], 'ckSelfIndv': [], 'ckOpIndv': [], 'maxRate': 5000}], 'svals': [{'Rate': 1000, 'Turn': 3, 'Count': -1, 'Value': 90}, {'Rate': 1000, 'Turn': 3, 'Count': -1, 'Value': 99}, {'Rate': 1000, 'Turn': 3, 'Count': -1, 'Value': 108}, {'Rate': 1000, 'Turn': 3, 'Count': -1, 'Value': 117}, {'Rate': 1000, 'Turn': 3, 'Count': -1, 'Value': 126}, {'Rate': 1000, 'Turn': 3, 'Count': -1, 'Value': 135}, {'Rate': 1000, 'Turn': 3, 'Count': -1, 'Value': 144}, {'Rate': 1000, 'Turn': 3, 'Count': -1, 'Value': 153}, {'Rate': 1000, 'Turn': 3, 'Count': -1, 'Value': 162}, {'Rate': 1000, 'Turn': 3, 'Count': -1, 'Value': 180}]}
 test2 = {'funcId': 120, 'funcType': 'addStateShort', 'funcTargetType': 'self', 'funcTargetTeam': 'playerAndEnemy', 'funcPopupText': '버스터 UP', 'funcPopupIcon': 'https://static.atlasacademy.io/KR/BuffIcons/bufficon_314.png', 'functvals': [], 'funcquestTvals': [], 'funcGroup': [], 'buffs': [{'id': 102, 'name': '버스터 UP', 'detail': '버스터 카드의 성능 UP', 'icon': 'https://static.atlasacademy.io/KR/BuffIcons/bufficon_314.png', 'type': 'upCommandall', 'buffGroup': 0, 'script': {}, 'vals': [{'id': 3004, 'name': 'buffPositiveEffect'}, {'id': 3006, 'name': 'buffIncreaseDamage'}], 'tvals': [{'id': 5000, 'name': 'canBeInBattle'}, {'id': 4002, 'name': 'cardBuster'}], 'ckSelfIndv': [{'id': 4002, 'name': 'cardBuster'}], 'ckOpIndv': [], 'maxRate': 5000}], 'svals': [{'Rate': 1000, 'Turn': 1, 'Count': -1, 'Value': 300}, {'Rate': 1000, 'Turn': 1, 'Count': -1, 'Value': 320}, {'Rate': 1000, 'Turn': 1, 'Count': -1, 'Value': 340}, {'Rate': 1000, 'Turn': 1, 'Count': -1, 'Value': 360}, {'Rate': 1000, 'Turn': 1, 'Count': -1, 'Value': 380}, {'Rate': 1000, 'Turn': 1, 'Count': -1, 'Value': 400}, {'Rate': 1000, 'Turn': 1, 'Count': -1, 'Value': 420}, {'Rate': 1000, 'Turn': 1, 'Count': -1, 'Value': 440}, {'Rate': 1000, 'Turn': 1, 'Count': -1, 'Value': 460}, {'Rate': 1000, 'Turn': 1, 'Count': -1, 'Value': 500}]}
 test3 = {'funcId': 476, 'funcType': 'gainStar', 'funcTargetType': 'self', 'funcTargetTeam': 'player', 'funcPopupText': '스타 획득', 'functvals': [], 'funcquestTvals': [], 'funcGroup': [], 'buffs': [], 'svals': [{'Rate': 1000, 'Value': 5}, {'Rate': 1000, 'Value': 6}, {'Rate': 1000, 'Value': 7}, {'Rate': 1000, 'Value': 8}, {'Rate': 1000, 'Value': 9}, {'Rate': 1000, 'Value': 10}, {'Rate': 1000, 'Value': 11}, {'Rate': 1000, 'Value': 12}, {'Rate': 1000, 'Value': 13}, {'Rate': 1000, 'Value': 15}]}
+test4 = {'funcId': 215, 'funcType': 'addStateShort', 'funcTargetType': 'self', 'funcTargetTeam': 'enemy', 'funcPopupText': '크리티컬 발생 UP', 'funcPopupIcon': 'https://static.atlasacademy.io/KR/BuffIcons/bufficon_327.png', 'functvals': [], 'funcquestTvals': [], 'funcGroup': [], 'buffs': [{'id': 144, 'name': '크리티컬 발생 UP', 'detail': '크리티컬 발생률 UP', 'icon': 'https://static.atlasacademy.io/KR/BuffIcons/bufficon_327.png', 'type': 'upCriticalrate', 'buffGroup': 0, 'script': {}, 'vals': [{'id': 3004, 'name': 'buffPositiveEffect'}, {'id': 3006, 'name': 'buffIncreaseDamage'}, {'id': 3032, 'name': 'buffCritRateUp'}], 'tvals': [], 'ckSelfIndv': [], 'ckOpIndv': [], 'maxRate': 5000}], 'svals': [{'Rate': 1000, 'Turn': 2, 'Count': -1, 'Value': 200}, {'Rate': 1000, 'Turn': 2, 'Count': -1, 'Value': 200}, {'Rate': 1000, 'Turn': 2, 'Count': -1, 'Value': 200}, {'Rate': 1000, 'Turn': 2, 'Count': -1, 'Value': 200}, {'Rate': 1000, 'Turn': 2, 'Count': -1, 'Value': 200}, {'Rate': 1000, 'Turn': 2, 'Count': -1, 'Value': 200}, {'Rate': 1000, 'Turn': 2, 'Count': -1, 'Value': 200}, {'Rate': 1000, 'Turn': 2, 'Count': -1, 'Value': 200}, {'Rate': 1000, 'Turn': 2, 'Count': -1, 'Value': 200}, {'Rate': 1000, 'Turn': 2, 'Count': -1, 'Value': 200}]}
+
 
 class Buff:
     def __init__(self, buff_func: dict):
@@ -17,7 +19,7 @@ class Buff:
             self.name = buff_func['buffs'][0]['name']
             self.buffIcon = buff_func['buffs'][0]['icon']
             self.buffType = buff_func['buffs'][0]['type']
-        else: #temp solution
+        else:  # temp solution
             self.buffType = self.funcType
             self.name = buff_func['funcPopupText']
 
@@ -83,3 +85,12 @@ if __name__ == '__main__':
     print(b.get_buff())
     print(b1.get_buff())
     print(b2.get_buff())
+
+    b3 = Buff(test4)
+    print(b3.get_buff())
+
+'''
+make an sval dictionary 
+automatically 
+Rate: [ , , ,, ]
+'''

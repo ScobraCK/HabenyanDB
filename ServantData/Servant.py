@@ -18,5 +18,5 @@ if __name__ == '__main__':
         a = Servant(parsed)
 
         #pprint(a.__dict__, sort_dicts=False)
-        print(parsed['skills'][2]['functions'][0])
+        print(parsed['skills'][2]['functions'][1])
 
