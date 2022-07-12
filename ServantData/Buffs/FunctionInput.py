@@ -14,7 +14,7 @@ target_ex = ['gainStar']
 
 # buff types
 non_percent = []
-np_type = []
+np_type = ['gainNp']
 
 target_translate = {'self': '자기 자신', 'ptOne': '아군 한 명', 'ptAll': '아군 전체'}
 
@@ -85,6 +85,8 @@ def buff_description(buff: SkillFunction) -> (str, List[str]):
         elif value_flag:
             if buff.buff_type and buff.buff_type not in non_percent:
                 lv = clean_lv([x/10 for x in buff.svals.Value])
+            elif buff.type in np_type:
+                lv = clean_lv([x/100 for x in buff.svals.Value])
             else:
                 lv = buff.svals.Value
         else:
