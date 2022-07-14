@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from dacite import from_dict
 from typing import Optional, List, Union, Dict
 
@@ -10,6 +10,31 @@ class FunctionSvals:
     Count: Optional[List[int]]
     Value: Optional[List[int]]
     Value2: Optional[List[int]]
+
+    ActSet: Optional[List[int]]
+    ActSetWeight: Optional[List[int]]
+    AddIndividualty: Optional[List[int]]
+    AddLinkageTargetIndividualty: Optional[List[int]]
+    AuraEffectId: Optional[List[int]]
+    #DependFuncId: Optional[List[int]]
+    #DependFuncVals: Optional[List[int]]
+    HideMiss: Optional[List[int]]
+    HideNoEffect: Optional[List[int]]
+    InvalidHide: Optional[List[int]]
+    MotionChange: Optional[List[int]]
+    ParamAdd: Optional[List[int]]
+    ParamMax: Optional[List[int]]
+    RatioHPHigh: Optional[List[int]]
+    RatioHPLow: Optional[List[int]]
+    RatioHPRangeHigh: Optional[List[int]]
+    RatioHPRangeLow: Optional[List[int]]
+    ShowCardOnly: Optional[List[int]]
+    ShowQuestNoEffect: Optional[List[int]]
+    ShowState: Optional[List[int]]
+    SkillID: Optional[List[int]]
+    SkillLV: Optional[List[int]]
+    StarHigher: Optional[List[int]]
+    UseRate: Optional[List[int]]
 
 
 @dataclass
@@ -28,30 +53,6 @@ class SkillFunction:
 
 
 @dataclass
-class ServantInput:
-    id: int
-    collection_no: int
-    name: str
-    class_name: str
-    rarity: int
-    cost: int
-    attribute: str
-    star_absorb: int
-    star_gen: int
-    death_chance: int
-    cards: List[str]
-    hit_distribution: Dict
-    atk_base: int
-    atk_max: int
-    hp_base: int
-    hp_max: int
-    atk_growth: List[int]
-    hp_growth: List[int]
-    bond: List[int]
-    exp: List[int]
-
-
-@dataclass
 class Buff:
     description: str
     level: Union[List[int], List[str]]
@@ -66,7 +67,7 @@ class Skill:
     num: int
     priority: int
     cooldown: List[int]
-    buff_list: Optional[List[Buff]]  # optional for easy input
+    buff_list: List[Buff] = field(init=False)
 
 
 @dataclass
@@ -88,9 +89,29 @@ class Np:
 
 
 @dataclass
-class Servant(ServantInput):
-    np_gain: int
-    np_gain_hit: int
+class Servant():
+    id: int
+    collectionNo: int
+    name: str
+    className: str
+    rarity: int
+    cost: int
+    attribute: str
+    starAbsorb: int
+    starGen: int
+    instantDeathChance: int
+    cards: List[str]
+    hitsDistribution: Dict
+    atkBase: int
+    atkMax: int
+    hpBase: int
+    hpMax: int
+    # atkGrowth: List[int]
+    # hpGrowth: List[int]
+    # bondGrowth: List[int]
+    # expGrowth: List[int]
+    np_gain: int = field(init=False)
+    np_gain_hit: int = field(init=False)
 
-    skills: Dict
-    # np: List[Np]
+    skill: Dict = field(init=False)
+    # np: List[Np] = field(init=False)

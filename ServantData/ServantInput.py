@@ -1,25 +1,23 @@
 from Templates import *
 import ServantData.Buffs.FunctionInput as buffs
 
-remap = {'collectionNo': 'collection_no', 'className': 'class_name',
-        'starAbsorb': 'star_absorb', 'starGen': 'star_gen',
-         'instantDeathChance': 'death_chance','hitsDistribution': 'hit_distribution',
-        'atkBase': 'atk_base', 'atkMax': 'atk_max', 'hpBase': 'hp_base', 'hpMax': 'hp_max',
-         'atkGrowth': 'atk_growth', 'hpGrowth': 'hp_growth',
-         'bondGrowth': 'bond', 'expGrowth': 'exp'}
+# remap = {'collectionNo': 'collection_no', 'className': 'class_name',
+#         'starAbsorb': 'star_absorb', 'starGen': 'star_gen',
+#          'instantDeathChance': 'death_chance','hitsDistribution': 'hit_distribution',
+#         'atkBase': 'atk_base', 'atkMax': 'atk_max', 'hpBase': 'hp_base', 'hpMax': 'hp_max',
+#          'atkGrowth': 'atk_growth', 'hpGrowth': 'hp_growth',
+#          'bondGrowth': 'bond', 'expGrowth': 'exp'}
 
 
 def servant_input(servant_data: dict):
     # Beasts
     exceptions = [1700100, 9935400, 9935500, 9935530, 9939130, 9941730]
     if servant_data['id'] in exceptions:
-        remapped = {remap.get(k, k): v for (k, v) in servant_data.items()}
-        return from_dict(data_class=ServantInput, data=remapped)
+        return from_dict(data_class=Servant, data=servant_data)
 
-    remapped = {remap.get(k, k): v for (k, v) in servant_data.items()}
-    servant_dict = from_dict(data_class=ServantInput, data=remapped).__dict__
+    servant_dict = from_dict(data_class=Servant, data=servant_data).__dict__
 
-    servant_dict['skills'] = skill_input(servant_data['skills'])
+    servant_dict['skill'] = skill_input(servant_data['skills'])
 
     np_data = servant_data['noblePhantasms']
     servant_dict['np_gain'] = np_data[0]['npGain']['np'][0]
@@ -67,7 +65,7 @@ if __name__ == '__main__':
                 continue
 
             print(f'{i}: {t.name}\n---------------')
-            skills = t.skills
+            skills = t.skill
 
             print('1스킬\n---------------')
             for skill in skills[1]:
@@ -75,13 +73,13 @@ if __name__ == '__main__':
                 for buff in skill.buff_list:
                     print(buff.description, buff.level)
 
-            print('2스킬\n---------------')
+            print('---------------\n2스킬\n---------------')
             for skill in skills[2]:
                 print(skill.name)
                 for buff in skill.buff_list:
                     print(buff.description, buff.level)
 
-            print('3스킬\n---------------')
+            print('---------------\n3스킬\n---------------')
             for skill in skills[3]:
                 print(skill.name)
                 for buff in skill.buff_list:

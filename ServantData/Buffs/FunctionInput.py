@@ -28,6 +28,8 @@ def buff_function_input(buff_func: dict):
         if buff.svals.Value2:
             buff.name = buff_func['buffs'][0]['detail']
             # 상태 해제 특수 경우 처리 해야함
+    if buff.type == 'gainHp':
+        buff.name = "HP 회복"
 
     return buff
 
@@ -77,13 +79,22 @@ def buff_description(buff: SkillFunction) -> (str, List[str]):
         description += f' 부여'
 
     if buff.buff_type:
+        buff_limit = " ("
+        has_count = False
+        # count
+        if not count_flag and (count := buff.svals.Count[0]) > 0:
+            buff_limit += f'{count}회'
+            has_count = True
         # turns
         if (turn := buff.svals.Turn[0]) > 0:
-            description += f' ({turn}턴)'
+            if has_count:
+                buff_limit += ', '
+            buff_limit += f'{turn}턴'
+        buff_limit += ')'
+        description += buff_limit
 
     if lv_flag_count != 0:
         description += f' <LEVEL>'
-
 
     # level
     lv = ['-'] * 10
